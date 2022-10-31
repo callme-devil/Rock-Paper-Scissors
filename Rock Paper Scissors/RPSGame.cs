@@ -39,7 +39,7 @@ namespace Rock_Paper_Scissors
 
             string prompt = "Lets Play Some Rock Paper Scissors Game";
 
-            string[] options = { "Rock", "Paper", "Scissors" };
+            string[] options = { "Rock", "Paper", "Scissors" , "Exit"};
 
             string playerMove = "";
 
@@ -57,6 +57,9 @@ namespace Rock_Paper_Scissors
                     break;
                 case 2:
                     playerMove = "Scissors";
+                    break;
+                case 3:
+                    Environment.Exit(0);
                     break;
             }
 
