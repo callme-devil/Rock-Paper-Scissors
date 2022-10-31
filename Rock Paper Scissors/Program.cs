@@ -7,7 +7,8 @@ namespace Rock_Paper_Scissors
     {
         static void Main(string[] args)
         {
-            
+            RPSGame game = new RPSGame();
+            game.Play();
         }
     }
 }

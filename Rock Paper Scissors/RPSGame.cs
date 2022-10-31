@@ -5,21 +5,52 @@ namespace Rock_Paper_Scissors
      class RPSGame
      {
 
-         private string RockGraphic = @"";
+         private string RockGraphic = @"
+        _______
+    ---'   ____)
+          (_____)
+          (_____)
+          (____)
+    ---.__(___)
+";
 
-         private string PaperGraphic = @"";
+         private string PaperGraphic = @"
+         _______
+    ---'    ____)____
+               ______)
+              _______)
+             _______)
+    ---.__________)
+";
 
-         private string ScissorsGraphic = @"";
+         private string ScissorsGraphic = @"
+        _______
+    ---'   ____)____
+              ______)
+           __________)
+          (____)
+    ---.__(___)
+";
 
 
         public void Play()
          {
-            Title = "== Rock Paper Scissors ==";
+            Title = "== RPS Game ==";
+
+            WriteLine(@"
+        ██████  ██████  ███████      ██████   █████  ███    ███ ███████ 
+        ██   ██ ██   ██ ██          ██       ██   ██ ████  ████ ██      
+        ██████  ██████  ███████     ██   ███ ███████ ██ ████ ██ █████   
+        ██   ██ ██           ██     ██    ██ ██   ██ ██  ██  ██ ██      
+        ██   ██ ██      ███████      ██████  ██   ██ ██      ██ ███████ 
+
+");
+
             WriteLine("Lets Play Some Rock Paper Scissors Game");
 
             WriteLine("What Would you Like to Play ? Move With Arrow Keys");
 
-            string playerMove = "";
+            string playerMove = ReadLine();
 
             Random rng = new Random();
             int randomChoice = rng.Next(0,3);
