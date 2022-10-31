@@ -52,11 +52,25 @@ namespace Rock_Paper_Scissors
 
             string[] options = { "Rock", "Paper", "Scissors" };
 
+            string playerMove = "";
+
             Menu mainMenu = new Menu(options);
 
             int selectedIndex = mainMenu.Run();
 
-            string playerMove = ReadLine();
+            switch (selectedIndex)
+            {
+                case 0:
+                    playerMove = "Rock";
+                    break;
+                case 1:
+                    playerMove = "Paper";
+                    break;
+                case 2:
+                    playerMove = "Scissors";
+                    break;
+            }
+
 
             Random rng = new Random();
             int randomChoice = rng.Next(0,3);
