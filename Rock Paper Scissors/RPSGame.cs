@@ -5,7 +5,14 @@ namespace Rock_Paper_Scissors
      class RPSGame
      {
 
-         public void Play()
+         private string RockGraphic = @"";
+
+         private string PaperGraphic = @"";
+
+         private string ScissorsGraphic = @"";
+
+
+        public void Play()
          {
             Title = "== Rock Paper Scissors ==";
             WriteLine("Lets Play Some Rock Paper Scissors Game");
@@ -32,27 +39,51 @@ namespace Rock_Paper_Scissors
                 computerMove = "Scissors";
             }
 
-            WriteLine($"You Played {playerMove} . . .");
-            WriteLine($"Computer Player {computerMove} . . .");
+            ForegroundColor = ConsoleColor.Yellow;
+            WriteLine($"\n You Played {playerMove} . . .");
+            DisplayMoveGraphic(playerMove);
+
+            ForegroundColor = ConsoleColor.Red;
+            WriteLine($"\n The Computer Played {computerMove} . . .");
+            DisplayMoveGraphic(computerMove);
 
 
             if ((computerMove == "Rock" && playerMove == "Paper")
                 || (computerMove == "Paper" && playerMove == "Scissors")
                 || (computerMove == "Scissors" && playerMove == "Rock"))
             {
+                ForegroundColor = ConsoleColor.Green;
                 WriteLine("You Won!");
             }
             else if (computerMove == playerMove)
             {
+                ForegroundColor = ConsoleColor.DarkMagenta;
                 WriteLine("You Tied!");
             }
             else
             {
+                ForegroundColor = ConsoleColor.Red;
                 WriteLine("You Lose!");
             }
 
             WriteLine("Press Any Key to Exit ...");
             ReadKey();
          }
+
+        private void DisplayMoveGraphic(string move)
+        {
+            if (move == "Rock")
+            {
+                WriteLine(RockGraphic);
+            }
+            else if (move == "Paper")
+            {
+                WriteLine(PaperGraphic);
+            }
+            else if (move == "Scissors")
+            {
+                WriteLine(ScissorsGraphic);
+            }
+        }
      }
 }
