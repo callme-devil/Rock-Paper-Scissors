@@ -50,6 +50,12 @@ namespace Rock_Paper_Scissors
 
             WriteLine("What Would you Like to Play ? Move With Arrow Keys");
 
+            string[] options = { "Rock", "Paper", "Scissors" };
+
+            Menu mainMenu = new Menu(options);
+
+            mainMenu.DisplayOptions();
+
             string playerMove = ReadLine();
 
             Random rng = new Random();
