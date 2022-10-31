@@ -4,12 +4,37 @@ namespace Rock_Paper_Scissors
 {
      class RPSGame
      {
+
          public void Play()
          {
             Title = "== Rock Paper Scissors ==";
+            WriteLine("Lets Play Some Rock Paper Scissors Game");
+
+            WriteLine("What Would you Like to Play ? Move With Arrow Keys");
 
             string playerMove = "";
+
+            Random rng = new Random();
+            int randomChoice = rng.Next(0,3);
+
             string computerMove = "";
+
+            if (randomChoice == 0)
+            {
+                computerMove = "Rock";
+            }
+            else if (randomChoice == 1)
+            {
+                computerMove = "Paper";
+            }
+            else
+            {
+                computerMove = "Scissors";
+            }
+
+            WriteLine($"You Played {playerMove} . . .");
+            WriteLine($"Computer Player {computerMove} . . .");
+
 
             if ((computerMove == "Rock" && playerMove == "Paper")
                 || (computerMove == "Paper" && playerMove == "Scissors")
