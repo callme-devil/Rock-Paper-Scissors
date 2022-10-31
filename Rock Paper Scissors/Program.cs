@@ -1,9 +1,13 @@
-﻿namespace Rock_Paper_Scissors
+﻿using System;
+using static System.Console;
+
+namespace Rock_Paper_Scissors
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
