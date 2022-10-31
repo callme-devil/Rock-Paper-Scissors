@@ -37,24 +37,13 @@ namespace Rock_Paper_Scissors
          {
             Title = "== RPS Game ==";
 
-            WriteLine(@"
-        ██████  ██████  ███████      ██████   █████  ███    ███ ███████ 
-        ██   ██ ██   ██ ██          ██       ██   ██ ████  ████ ██      
-        ██████  ██████  ███████     ██   ███ ███████ ██ ████ ██ █████   
-        ██   ██ ██           ██     ██    ██ ██   ██ ██  ██  ██ ██      
-        ██   ██ ██      ███████      ██████  ██   ██ ██      ██ ███████ 
-
-");
-
-            WriteLine("Lets Play Some Rock Paper Scissors Game");
-
-            WriteLine("What Would you Like to Play ? Move With Arrow Keys");
+            string prompt = "Lets Play Some Rock Paper Scissors Game";
 
             string[] options = { "Rock", "Paper", "Scissors" };
 
             string playerMove = "";
 
-            Menu mainMenu = new Menu(options);
+            Menu mainMenu = new Menu(prompt,options);
 
             int selectedIndex = mainMenu.Run();
 
@@ -116,10 +105,12 @@ namespace Rock_Paper_Scissors
                 ForegroundColor = ConsoleColor.Red;
                 WriteLine("You Lose!");
             }
-
-            WriteLine("Press Any Key to Exit ...");
+            ResetColor();
+            WriteLine("Press Any Key to Play Again");
             ReadKey();
-         }
+            Play();
+
+        }
 
         private void DisplayMoveGraphic(string move)
         {

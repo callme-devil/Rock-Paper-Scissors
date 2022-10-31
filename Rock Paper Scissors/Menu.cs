@@ -6,15 +6,30 @@ namespace Rock_Paper_Scissors
     {
         private int SelectedTabIndex;
         private string[] Options;
+        private string Prompt;
 
-        public Menu(string[] options)
+        public Menu(string prompt, string[] options)
         {
             Options = options;
             SelectedTabIndex = 0;
+            Prompt = prompt;
         }
 
         private void DisplayOptions()
         {
+            WriteLine(@"
+        ██████  ██████  ███████      ██████   █████  ███    ███ ███████ 
+        ██   ██ ██   ██ ██          ██       ██   ██ ████  ████ ██      
+        ██████  ██████  ███████     ██   ███ ███████ ██ ████ ██ █████   
+        ██   ██ ██           ██     ██    ██ ██   ██ ██  ██  ██ ██      
+        ██   ██ ██      ███████      ██████  ██   ██ ██      ██ ███████ 
+
+            ");
+            
+            WriteLine(Prompt);
+
+            WriteLine("What Would you Like to Play ? Move With Arrow Keys");
+            
             for (int i = 0; i < Options.Length; i++)
             {
                 string currentOption = Options[i];
