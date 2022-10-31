@@ -34,5 +34,41 @@ namespace Rock_Paper_Scissors
             }
             ResetColor();
         }
+
+        public int Run()
+        {
+            ConsoleKey keyPressed;
+
+            do
+            {
+                Clear();
+                DisplayOptions();
+
+                ConsoleKeyInfo keyInfo = ReadKey(true);
+                keyPressed = keyInfo.Key;
+
+                if (keyPressed == ConsoleKey.UpArrow)
+                {
+                    SelectedTabIndex--;
+                    if (SelectedTabIndex == -1)
+                    {
+                        SelectedTabIndex = Options.Length - 1;
+                    }
+                }
+
+                else if (keyPressed == ConsoleKey.DownArrow)
+                {
+                    SelectedTabIndex++;
+                    if (SelectedTabIndex == Options.Length)
+                    {
+                        SelectedTabIndex = 0;
+                    }
+                }
+
+
+            } while (keyPressed != ConsoleKey.Enter);
+
+            return SelectedTabIndex;
+        }
     }
 }

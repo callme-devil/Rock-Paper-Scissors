@@ -54,7 +54,7 @@ namespace Rock_Paper_Scissors
 
             Menu mainMenu = new Menu(options);
 
-            mainMenu.DisplayOptions();
+            int selectedIndex = mainMenu.Run();
 
             string playerMove = ReadLine();
 
